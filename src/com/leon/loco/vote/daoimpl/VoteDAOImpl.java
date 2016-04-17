@@ -63,6 +63,35 @@ public class VoteDAOImpl implements VoteDAO
 		}
 		return null;
 	}
+	
+	public Vote findVoteByID(int voteID)
+	{
+
+		Connection conn = DBConnection.getConnection();
+		String sql = "select voteID, voteName, channelID from tb_vote where voteID = ?";
+		PreparedStatement pStmt = null;
+		ResultSet rs = null;
+		try
+		{
+			pStmt = conn.prepareStatement(sql);
+			pStmt.setInt(1, voteID);
+			rs = pStmt.executeQuery();
+			if (rs.next())
+			{
+				Vote vote = new Vote();
+				vote.setVoteID(rs.getInt(1));
+				vote.setVoteName(rs.getString(2));
+				vote.setChannelID(rs.getInt(3));
+				return vote;
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	
+	}
 
 	@Override
 	public int findAllCount()

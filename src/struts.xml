@@ -34,6 +34,10 @@
 		<result name="success">/vote/index.jsp</result>
 		<result name="input">/vote/index.jsp</result>
 	</action>
+	<action name="doVote" class="com.leon.loco.vote.action.DoVoteAction">
+		<result name="success" type="chain">voteResult</result>
+		<result name="input" type="chain">showVoteByChannel</result>
+	</action>
 	
 	
 	

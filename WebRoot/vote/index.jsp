@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			
     	</form>
     </c:forEach>
-    <c:if test="${empty voteResult}">
+    <c:if test="${empty voteResultList}">
     	没有任何投票内容！！！
     </c:if>
   

@@ -11,6 +11,8 @@ public interface VoteDAO
 
 	public Vote findVoteByName(String voteName);
 
+	public Vote findVoteByID(int voteID);
+
 	public int findAllCount();
 
 	public List<Vote> findAllVote(Page page);

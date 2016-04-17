@@ -92,4 +92,15 @@ public class VoteOptionDAOImpl implements VoteOptionDAO
 
 	}
 
+	@Override
+	public VoteOption findVoteOptionById(int voteOptionID)
+	{
+		return null;
+	}
+
+	@Override
+	public int updateVoteOption(VoteOption voteOption)
+	{
+		return 0;
+	}
 }
