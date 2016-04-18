@@ -32,7 +32,8 @@ public class VoteResultAction extends ActionSupport
 		{
 			dcd.setValue(voteOption.getTicketNum(), "", voteOption.getVoteOptionName());
 		}
-		JFreeChart chart = ChartFactory.createBarChart3D(voteName, "投票选项", "投票数", dcd, PlotOrientation.VERTICAL, false, true, false);
+		this.chart = ChartFactory.createBarChart3D(voteName, "voteOption", "voteNum", dcd, PlotOrientation.VERTICAL, false, true, false);
+		return this.chart;
 	}
 
 
